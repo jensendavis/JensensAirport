@@ -10,23 +10,31 @@ repositories {
 }
 
 application {
-    mainClass = 'Main'
+    mainClass = 'airport.AirportSimulation'
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
     useJUnitPlatform()
 }
 
+apply plugin: 'checkstyle'
 checkstyle {
-    toolVersion = '10.12.1'
-    configFile = file("config/checkstyle/checkstyle.xml")
+    // Keep checkstyle a little quieter
     ignoreFailures = true
     showViolations = false
 }
+
+tasks.withType(Checkstyle) {
+}
+checkstyle {
+    toolVersion = "8.8"
+}
+
 
 spotbugs {
     toolVersion = '4.8.4'
