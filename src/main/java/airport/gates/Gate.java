@@ -1,6 +1,8 @@
-package airport;
+package airport.gates;
 
-public class Gate implements Observer {
+import airport.AirportObserver;
+
+public class Gate implements AirportObserver {
     private String gateNumber;
 
     public Gate(String gateNumber) {
