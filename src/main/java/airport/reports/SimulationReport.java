@@ -61,7 +61,6 @@ public class SimulationReport {
         totalPlanes++;
     }
 
-    // Getters for testing
     public int getTotalPassengers() {
         return totalPassengers;
     }
